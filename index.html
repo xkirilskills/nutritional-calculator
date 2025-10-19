@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="img/calculator.png">
+    <title>Nutritional Calculator</title>
 </head>
-<body>
-    <h1>Hello World</h1>
+
+<body onload="ChangeOption()">
+    <script src="index.js"></script>
+    <h1 id="MainText" onclick="ChangeColor()"></h1>
+    <label for="choices">Изберете што да пресметате</label>
+    <select name="choices" id="choices" onchange="ChangeOption()">
+        <option value="">Избери...</option>
+        <option value="Kalorii" id="option1">Калории</option>
+        <option value="Proteini" id="option2">Протеини</option>
+    </select>
+    <form>
+        <label for="cal-in-100g" id="label-100g">Калории во 100г</label><br>
+        <input type="text" name="cal-in-100g" id="cal-in-100g" placeholder="0"> <br>
+        <label for="input-g">Грамажа што ја конзумирате</label> <br>
+        <input type="text" name="input-g" id="input-g" placeholder="0">
+    </form>
+    <br>
+    <h1 id="result"></h1>
+    <button onclick="Calculate()">Пресметај</button>
 </body>
+
 </html>
